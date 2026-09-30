@@ -1,0 +1,18 @@
+{
+  "nombre": "Torta Caluga Manjar y Frambuesa",
+  "precio": 17990,
+  "porciones": "",
+  "foto": "/img/productos/torta-manjar-frambuesa.jpg",
+  "fotos": [
+    "/img/productos/torta-manjar-frambuesa-2.jpg"
+  ],
+  "descripcion": "Manjar de Puerto Varas, caluga artesanal, crumble y frambuesas naturales.",
+  "versiones": [
+    "Con azúcar",
+    "Sin azúcar añadida"
+  ],
+  "etiqueta": "Nueva",
+  "orden": 20,
+  "agotado": false,
+  "visible": true
+}

@@ -1,0 +1,19 @@
+{
+  "nombre": "Torta Caluga Frambuesa 5 personas",
+  "precio": 13990,
+  "precio_antes": 19990,
+  "porciones": "5 personas",
+  "foto": "/img/productos/torta-frambuesa-5.jpg",
+  "fotos": [
+    "/img/productos/torta-frambuesa-5-2.jpg"
+  ],
+  "descripcion": "La versión mini de la clásica, ideal para regalar o para un antojo en casa.",
+  "versiones": [
+    "Con azúcar",
+    "Sin azúcar añadida"
+  ],
+  "etiqueta": "",
+  "orden": 40,
+  "agotado": false,
+  "visible": true
+}

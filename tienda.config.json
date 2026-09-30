@@ -1,0 +1,33 @@
+{
+  "_ayuda": "Datos fijos de la tienda (los define el desarrollador). Contacto, zonas de entrega, puntos de venta y portada van en data/ajustes.json, que el cliente edita desde /admin.",
+  "nombre": "Tío Caluga",
+  "marca_a": "Tío",
+  "marca_b": "Caluga",
+  "rubro": "Repostería artesanal: Torta Caluga, copones y brownies",
+  "schema_tipo": "Bakery",
+  "seo_titulo": "Torta Caluga en Temuco, Villarrica y Pucón | Tío Caluga",
+  "seo_descripcion": "Torta Caluga artesanal con y sin azúcar añadida: tortas de 5 a 15 personas, copones familiares y brownies Franuí. Entregas de lunes a domingo en Temuco, Villarrica y Pucón.",
+  "github_repo": "Bemol69/Tio-Caluga",
+  "site_url": "https://tio-caluga.vercel.app",
+  "google_verificacion": "",
+  "hero": [
+    { "foto": "img/hero/hero-1.jpg", "alt": "Torta Caluga Frambuesa con frambuesas naturales y crumble de caluga" },
+    { "foto": "img/hero/hero-2.jpg", "alt": "Corte de Torta Caluga Frambuesa: capas de bizcocho, crema de caluga y frambuesas" },
+    { "foto": "img/hero/hero-3.jpg", "alt": "Postre Tío Caluga en frasco con vista al lago" }
+  ],
+  "fuentes": { "titulos": "Fraunces", "texto": "Figtree" },
+  "colores": {
+    "fondo": "#F7EFE4",
+    "papel": "#FFFAF3",
+    "frambuesa": "#C03B4E",
+    "frambuesa_oscuro": "#942A3B",
+    "frambuesa_claro": "#F6DADD",
+    "caluga": "#C8893F",
+    "caluga_claro": "#F1DDBC",
+    "chocolate": "#3A2420",
+    "tinta": "#2E1D1A",
+    "tinta_suave": "#7A625A",
+    "pistacho": "#8FA35B",
+    "crema": "#FBE9C9"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "entregas": [
+    {
+      "archivo": "/img/entregas/entrega-1.jpg",
+      "titulo": "Con vista al lago",
+      "texto": "El postre en frasco viaja a donde vayas",
+      "descripcion": "Postre Tío Caluga en frasco con el lago y una piscina de fondo"
+    },
+    {
+      "archivo": "/img/entregas/entrega-2.jpg",
+      "titulo": "Recién llegado",
+      "texto": "Entregas en Temuco, Villarrica y Pucón",
+      "descripcion": "Clienta sosteniendo un postre Torta Caluga en su jardín"
+    },
+    {
+      "archivo": "/img/entregas/entrega-3.jpg",
+      "titulo": "Verano con caluga",
+      "texto": "Cuchareable, fresco y para compartir",
+      "descripcion": "Postre Tío Caluga cuchareable junto a la piscina"
+    }
+  ]
+}

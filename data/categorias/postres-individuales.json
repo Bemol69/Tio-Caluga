@@ -1,0 +1,9 @@
+{
+  "nombre": "Postres individuales",
+  "productos": [
+    "postre-torta-caluga-frambuesa",
+    "postre-cuchareable-oreo-y-caluga"
+  ],
+  "orden": 4,
+  "visible": true
+}

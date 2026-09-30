@@ -1,0 +1,16 @@
+{
+  "nombre": "Brownie Caluga Franuí",
+  "precio": 14990,
+  "porciones": "4 porciones",
+  "foto": "/img/productos/brownie-caluga-franui.jpg",
+  "fotos": [],
+  "descripcion": "Brownie húmedo, abundante caluga artesanal y Franuí de frambuesa bañados en chocolate.",
+  "versiones": [
+    "Con azúcar",
+    "Sin azúcar añadida"
+  ],
+  "etiqueta": "Favorito",
+  "orden": 70,
+  "agotado": false,
+  "visible": true
+}

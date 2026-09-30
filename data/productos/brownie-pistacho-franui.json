@@ -1,0 +1,17 @@
+{
+  "nombre": "Brownie Pistacho Franuí",
+  "precio": 11990,
+  "precio_antes": 17990,
+  "porciones": "3 a 4 personas",
+  "foto": "/img/productos/brownie-pistacho-franui.jpg",
+  "fotos": [],
+  "descripcion": "Brownie intenso y chocolatoso, cremosa capa de pistacho, frambuesas naturales y Franuí.",
+  "versiones": [
+    "Con azúcar",
+    "Sin azúcar añadida"
+  ],
+  "etiqueta": "",
+  "orden": 60,
+  "agotado": false,
+  "visible": true
+}

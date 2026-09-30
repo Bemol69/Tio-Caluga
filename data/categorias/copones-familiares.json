@@ -1,0 +1,9 @@
+{
+  "nombre": "Copones familiares",
+  "productos": [
+    "copon-familiar-torta-caluga-franui",
+    "copon-familiar-torta-caluga-frambuesa"
+  ],
+  "orden": 2,
+  "visible": true
+}

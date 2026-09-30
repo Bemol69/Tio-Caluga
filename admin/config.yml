@@ -1,0 +1,430 @@
+# Configuración del panel /admin (Sveltia CMS)
+# Cada cambio que se guarda aquí crea un commit en GitHub.
+# Vercel arma la web (scripts/build.mjs) y la publica en ~30 segundos.
+
+backend:
+  name: github
+  repo: %%GITHUB_REPO%%
+  branch: main
+  commit_messages:
+    create: "Carta: crea {{collection}} «{{slug}}»"
+    update: "Carta: actualiza {{collection}} «{{slug}}»"
+    delete: "Carta: elimina {{collection}} «{{slug}}»"
+    uploadMedia: "Carta: sube foto {{path}}"
+    deleteMedia: "Carta: elimina foto {{path}}"
+
+site_url: %%SITE_URL%%
+display_url: %%SITE_URL%%
+logo_url: ../img/logo.jpg
+
+media_folder: img/productos
+public_folder: /img/productos
+
+# Nombres de archivo sin tildes ni ñ (ej: "Torta Caluga Pistacho" -> torta-caluga-pistacho.json)
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Las fotos del celular se achican y convierten a WebP al subirlas, para que la web cargue rápido
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 1400
+          height: 1400
+
+collections:
+  # ---------- CATEGORÍAS (filtros de la carta) ----------
+  - name: categorias
+    label: Categorías
+    label_singular: categoría
+    description: "Los filtros de la carta (Tortas, Copones familiares, Brownies…). Abre uno para elegir qué postres aparecen en él."
+    icon: filter_list
+    folder: data/categorias
+    format: json
+    create: true
+    delete: true
+    identifier_field: nombre
+    slug: "{{nombre}}"
+    summary: "{{nombre}}"
+    sortable_fields:
+      fields: [orden, nombre]
+      default:
+        field: orden
+        direction: ascending
+    fields:
+      - name: nombre
+        label: Nombre del filtro
+        widget: string
+        hint: "Así aparece en la web. Ej: Tortas"
+
+      - name: productos
+        label: Postres en este filtro
+        widget: relation
+        collection: productos
+        value_field: "{{slug}}"
+        search_fields: [nombre]
+        display_fields: ["{{nombre}} · ${{precio}}"]
+        multiple: true
+        required: false
+        hint: "Busca y marca los postres. Un mismo postre puede estar en varios filtros. Para moverlo, quítalo de aquí y agrégalo en el otro."
+
+      - name: orden
+        label: Posición
+        widget: number
+        value_type: int
+        default: 100
+        hint: "Los números más bajos aparecen primero en la barra de filtros."
+
+      - name: visible
+        label: Mostrar en la web
+        widget: boolean
+        default: true
+        hint: "Desactívalo para esconder el filtro sin borrarlo."
+
+  # ---------- PRODUCTOS ----------
+  - name: productos
+    label: Postres
+    label_singular: postre
+    description: "Todos los postres de la carta. Para que un postre aparezca en un filtro, agrégalo desde Categorías."
+    icon: cake
+    folder: data/productos
+    format: json
+    create: true
+    delete: true
+    identifier_field: nombre
+    slug: "{{nombre}}"
+    summary: "{{nombre}} · ${{precio}}"
+    thumbnail: foto
+    sortable_fields:
+      fields: [orden, nombre, precio]
+      default:
+        field: orden
+        direction: ascending
+    fields:
+      - name: nombre
+        label: Nombre del postre
+        widget: string
+        hint: "Ej: Torta Caluga Frambuesa 10 personas"
+
+      - name: precio
+        label: Precio
+        widget: number
+        value_type: int
+        min: 0
+        hint: "Solo números, sin puntos ni signo $. Ej: 24490"
+
+      - name: precio_antes
+        label: Precio anterior (tachado)
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+        hint: "Opcional, para ofertas. Aparece tachado y la tapa roja muestra el % de descuento. Ej: 34990. Déjalo vacío si no hay oferta."
+
+      - name: porciones
+        label: Rinde para
+        widget: string
+        required: false
+        hint: "Opcional. Ej: 10 personas · 15 a 20 personas · 3,7 L · Individual"
+
+      - name: foto
+        label: Foto principal
+        widget: image
+        hint: "La que se ve en la carta. Ideal una foto vertical (4:5) y sin textos encima."
+
+      - name: fotos
+        label: Más fotos
+        label_singular: foto
+        widget: list
+        required: false
+        field:
+          name: foto
+          label: Foto
+          widget: image
+        hint: "Opcional, hasta 2 o 3. El corte, el frasco, desde arriba… La primera aparece al pasar el mouse sobre el postre."
+
+      - name: descripcion
+        label: Descripción
+        widget: text
+        required: false
+        hint: "Una o dos frases. Ej: Capas de caluga artesanal, frambuesas naturales y crumble."
+
+      - name: versiones
+        label: Versiones
+        label_singular: versión
+        widget: list
+        required: false
+        default: ["Con azúcar", "Sin azúcar añadida"]
+        field:
+          name: version
+          label: Versión
+          widget: string
+        hint: "Lo que el cliente elige antes de agregar. Normalmente «Con azúcar» y «Sin azúcar añadida». También sirve para sabores (Oreo & Caluga, Tiramisú). Si una versión no está disponible, bórrala de aquí."
+
+      - name: etiqueta
+        label: Etiqueta
+        widget: string
+        required: false
+        hint: "Opcional, va en la tapa roja cuando no hay descuento. Corta: Nueva, Favorito, Más pedido."
+
+      - name: orden
+        label: Posición
+        widget: number
+        value_type: int
+        default: 1000
+        hint: "Los números más bajos aparecen primero en la carta."
+
+      - name: agotado
+        label: Agotado
+        widget: boolean
+        default: false
+        hint: "Si está activado, se muestra «Agotado» y un botón para avisar por WhatsApp."
+
+      - name: visible
+        label: Mostrar en la web
+        widget: boolean
+        default: true
+        hint: "Desactívalo para ocultar el postre sin borrarlo (ej: edición limitada que ya terminó)."
+
+  # ---------- CÓDIGOS DE DESCUENTO ----------
+  - name: cupones
+    label: Códigos de descuento
+    label_singular: código de descuento
+    description: "Códigos que tus clientes escriben en su pedido. La web les dice si es válido y el descuento llega calculado en el WhatsApp. Para un código de regalo de un solo uso, apágalo cuando cierres la venta."
+    icon: sell
+    folder: data/cupones
+    format: json
+    create: true
+    delete: true
+    identifier_field: titulo
+    slug: "{{titulo}}"
+    summary: "{{codigo}} · {{titulo}} · {{activo}}"
+    sortable_fields:
+      fields: [titulo, codigo, vence]
+    fields:
+      - name: titulo
+        label: Título
+        widget: string
+        hint: "Para que tú lo reconozcas y el cliente lo vea al aplicarlo. Ej: Bienvenida 10%, Regalo Día de la Madre."
+
+      - name: codigo
+        label: Código
+        widget: string
+        pattern: ['^[A-Za-z0-9-]{3,20}$', "Entre 3 y 20 letras, números o guiones, sin espacios ni tildes. Ej: CALUGA10"]
+        hint: "Lo que el cliente escribe. Da lo mismo mayúsculas o minúsculas. Ideas: CALUGA10, MAMA2026, REGALO-ANA."
+
+      - name: tipo
+        label: Tipo de descuento
+        widget: select
+        options:
+          - { label: "Porcentaje (%)", value: porcentaje }
+          - { label: "Monto fijo en pesos ($)", value: monto }
+        default: porcentaje
+
+      - name: valor
+        label: Descuento
+        widget: number
+        value_type: int
+        min: 1
+        hint: "Solo el número. Porcentaje: 10 = 10%. Monto fijo: 3000 = $3.000 menos."
+
+      - name: categorias
+        label: Aplica a estas categorías
+        widget: relation
+        collection: categorias
+        value_field: "{{slug}}"
+        search_fields: [nombre]
+        display_fields: [nombre]
+        multiple: true
+        required: false
+        hint: "Opcional. Ej: solo «Tortas». Si dejas vacías las categorías Y los postres, el código sirve para toda la carta."
+
+      - name: productos
+        label: Aplica a estos postres
+        widget: relation
+        collection: productos
+        value_field: "{{slug}}"
+        search_fields: [nombre]
+        display_fields: ["{{nombre}} · ${{precio}}"]
+        multiple: true
+        required: false
+        hint: "Opcional. Se suma a las categorías de arriba."
+
+      - name: minimo
+        label: Compra mínima
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+        hint: "Opcional. Monto mínimo para que funcione. Ej: 20000. Vacío = sin mínimo."
+
+      - name: vence
+        label: Válido hasta
+        widget: datetime
+        format: "YYYY-MM-DD"
+        time_format: false
+        required: false
+        hint: "Opcional. El código deja de funcionar al terminar ese día."
+
+      - name: activo
+        label: Activo
+        widget: boolean
+        default: true
+        hint: "Apágalo para pausar la promo sin borrarla."
+
+  # ---------- AJUSTES ----------
+  - name: ajustes
+    label: Ajustes de la tienda
+    icon: settings
+    files:
+      - name: ajustes
+        label: Contacto, entregas y portada
+        file: data/ajustes.json
+        format: json
+        fields:
+          - name: whatsapp
+            label: WhatsApp para pedidos
+            widget: string
+            pattern: ['^\+?[0-9 ]{10,17}$', "Formato internacional, ej: 56975920967"]
+            hint: "Con código de país y sin +. Ej: 56975920967"
+          - { name: instagram, label: Usuario de Instagram, widget: string, required: false, hint: "Sin @. Déjalo vacío para ocultarlo." }
+          - { name: email, label: Correo, widget: string, required: false }
+          - { name: ciudad, label: Ciudad principal, widget: string, hint: "Ej: Temuco" }
+          - { name: direccion, label: Dirección, widget: string, required: false, hint: "Calle y número, sin la ciudad. Se muestra en la sección Ubicación con el mapa. Ej: La Llanura 2231" }
+          - { name: region, label: Región, widget: string, required: false }
+          - name: zonas_entrega
+            label: Zonas de entrega a domicilio
+            label_singular: zona
+            widget: list
+            field: { name: zona, label: Zona, widget: string }
+            hint: "Una por línea. Ej: Temuco, Villarrica, Pucón. El cliente elige una al pedir (también puede elegir Retiro)."
+          - { name: envio_gratis, label: Texto de envío gratis, widget: string, required: false, hint: "Ej: Envío gratis en Temuco. Si nombra una zona, en esa zona no se avisa costo de despacho. Déjalo vacío si no hay." }
+          - name: medios_pago
+            label: Medios de pago
+            label_singular: medio de pago
+            widget: list
+            field: { name: pago, label: Medio de pago, widget: string }
+            hint: "Los que el cliente puede elegir. Ej: Transferencia, Efectivo, Débito o crédito."
+          - { name: dias_entrega, label: Días de entrega, widget: string, default: "Lunes a domingo" }
+          - { name: seguidores, label: Seguidores en Instagram, widget: number, value_type: int, required: false, hint: "Se muestra en la portada. Actualízalo de vez en cuando." }
+          - { name: puntos_venta_total, label: Cantidad de puntos de venta, widget: number, value_type: int, required: false, hint: "El número grande de la sección de puntos de venta. Ej: 23" }
+          - name: puntos_venta
+            label: Puntos de venta destacados
+            label_singular: punto de venta
+            widget: list
+            required: false
+            field: { name: punto, label: Punto de venta, widget: string }
+            hint: "Uno por línea, con el formato «Lugar · Sector». Ej: Masapan Portal Francés · Temuco. Déjalo vacío para ocultar la sección."
+          - { name: hero_titulo, label: Título de la portada (línea chica), widget: string, hint: "Ej: La Torta" }
+          - { name: hero_destacado, label: Palabra gigante de la portada, widget: string, hint: "Va enorme y rellena con la foto de la torta. Mejor una sola palabra corta. Ej: Caluga" }
+          - { name: hero_lema, label: Frase bajo la palabra gigante, widget: string, required: false, hint: "Ej: hecha en el sur, con obsesión" }
+          - { name: hero_bajada, label: Texto de la portada, widget: text }
+          - name: vitrina
+            label: Postres en la vitrina de la portada
+            widget: relation
+            collection: productos
+            value_field: "{{slug}}"
+            search_fields: [nombre]
+            display_fields: ["{{nombre}} · ${{precio}}"]
+            multiple: true
+            max: 5
+            required: false
+            hint: "Hasta 5. Giran en el plato de la portada, en este orden. Si lo dejas vacío, se usan los primeros de la carta. Los agotados no aparecen."
+
+  # ---------- OFERTA, CINTA Y FOTOS DE CLIENTES ----------
+  - name: inicio
+    label: Oferta, cinta y fotos
+    description: "La oferta vigente, la cinta de frases en movimiento y las 3 fotos o videos de la sección «Ustedes»."
+    icon: campaign
+    files:
+      - name: flyer
+        label: Oferta vigente
+        file: data/flyer.json
+        format: json
+        fields:
+          - name: mostrar
+            label: Mostrar oferta en la web
+            widget: boolean
+            default: true
+            hint: "Apágala cuando la oferta termine. Se ocultan la sección y la ventana emergente."
+          - name: popup
+            label: Mostrar también como ventana emergente
+            widget: boolean
+            default: false
+            hint: "Aparece una vez por visita al entrar a la página."
+          - name: imagen
+            label: Imagen de la oferta
+            widget: image
+            media_folder: /img/flyer
+            public_folder: /img/flyer
+            hint: "El mismo flyer que publicas en Instagram (vertical, 1080×1350 o 1080×1440). Para cambiarlo, sube la nueva imagen aquí."
+          - name: titulo
+            label: Título
+            widget: string
+            hint: "Ej: Torta Manjar & Frambuesa a $24.990"
+          - name: descripcion
+            label: Texto de la oferta
+            widget: text
+            hint: "Resume lo que dice el flyer: qué es, precio, cupos y hasta cuándo."
+          - name: mensaje_whatsapp
+            label: Mensaje de WhatsApp
+            widget: string
+            hint: "Lo que se escribe solo cuando tocan «Reservar esta oferta»."
+
+      - name: franjas
+        label: Cinta de frases
+        file: data/franjas.json
+        format: json
+        fields:
+          - name: franja1
+            label: "Cinta bajo la portada"
+            widget: object
+            fields:
+              - name: mostrar
+                label: Mostrar en la web
+                widget: boolean
+                default: true
+              - name: frases
+                label: Frases
+                label_singular: frase
+                widget: list
+                min: 1
+                field: { name: frase, label: Frase, widget: string }
+                hint: "Una frase corta por línea. Ej: Con o sin azúcar añadida, Envío gratis en Temuco."
+              - name: velocidad
+                label: Velocidad
+                widget: select
+                options: [{ label: Lenta, value: lenta }, { label: Normal, value: normal }, { label: Rápida, value: rapida }]
+                default: lenta
+
+      - name: entregas
+        label: Ustedes (3 fotos o videos de clientes)
+        file: data/entregas.json
+        format: json
+        fields:
+          - name: entregas
+            label: Fotos o videos
+            label_singular: foto
+            widget: list
+            min: 3
+            max: 3
+            allow_add: false
+            allow_remove: false
+            hint: "Siempre son 3. Para cambiar una, reemplaza su foto o video. Puedes arrastrarlas para cambiar el orden. Pide permiso al cliente antes de publicar su foto."
+            summary: "{{titulo}}"
+            fields:
+              - name: archivo
+                label: Foto o video
+                widget: file
+                accept: "image/*,video/mp4,video/webm"
+                media_folder: /img/entregas
+                public_folder: /img/entregas
+                hint: "Foto (JPG/PNG) o video MP4 vertical, idealmente de menos de 15 segundos y 20 MB. Los videos se reproducen solos, sin sonido y en loop."
+              - { name: titulo, label: Título, widget: string, hint: "Ej: Con vista al lago" }
+              - { name: texto, label: Bajada, widget: string, required: false, hint: "Ej: Entrega en Villarrica" }
+              - { name: descripcion, label: Descripción de la imagen, widget: string, required: false, hint: "Qué se ve en la foto (para Google y lectores de pantalla)." }

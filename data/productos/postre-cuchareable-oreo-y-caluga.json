@@ -1,0 +1,19 @@
+{
+  "nombre": "Postre Cuchareable Oreo & Caluga",
+  "precio": 4990,
+  "porciones": "Individual",
+  "foto": "/img/productos/cuchareable.jpg",
+  "fotos": [
+    "/img/productos/cuchareable-2.jpg",
+    "/img/productos/cuchareable-3.jpg"
+  ],
+  "descripcion": "Capas intensas de Oreo con nuestra caluga artesanal, en frasco individual. También en Tiramisú sin azúcar añadida.",
+  "versiones": [
+    "Oreo & Caluga",
+    "Tiramisú sin azúcar añadida"
+  ],
+  "etiqueta": "",
+  "orden": 100,
+  "agotado": false,
+  "visible": true
+}

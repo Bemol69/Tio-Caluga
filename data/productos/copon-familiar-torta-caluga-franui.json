@@ -1,0 +1,19 @@
+{
+  "nombre": "Copón Familiar Torta Caluga Franuí",
+  "precio": 36990,
+  "precio_antes": 49990,
+  "porciones": "15 a 20 personas · 3,7 L",
+  "foto": "/img/productos/copon-franui.jpg",
+  "fotos": [
+    "/img/productos/copon-franui-2.jpg"
+  ],
+  "descripcion": "Capas de caluga artesanal, crumble y frambuesas naturales coronadas con Franuí, en copón de 3,7 litros para compartir.",
+  "versiones": [
+    "Con azúcar",
+    "Sin azúcar añadida"
+  ],
+  "etiqueta": "Más pedido",
+  "orden": 10,
+  "agotado": false,
+  "visible": true
+}

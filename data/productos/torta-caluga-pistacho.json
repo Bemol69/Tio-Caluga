@@ -1,0 +1,19 @@
+{
+  "nombre": "Torta Caluga Pistacho",
+  "precio": 15990,
+  "precio_antes": 21990,
+  "porciones": "",
+  "foto": "/img/productos/torta-pistacho.jpg",
+  "fotos": [
+    "/img/productos/torta-pistacho-2.jpg"
+  ],
+  "descripcion": "Suave, cremosa y con el toque perfecto de pistacho sobre nuestra caluga artesanal.",
+  "versiones": [
+    "Con azúcar",
+    "Sin azúcar añadida"
+  ],
+  "etiqueta": "",
+  "orden": 50,
+  "agotado": false,
+  "visible": true
+}

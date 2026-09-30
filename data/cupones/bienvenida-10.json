@@ -1,0 +1,11 @@
+{
+  "titulo": "Bienvenida 10% en toda la tienda",
+  "codigo": "CALUGA10",
+  "tipo": "porcentaje",
+  "valor": 10,
+  "categorias": [],
+  "productos": [],
+  "minimo": 15000,
+  "vence": "",
+  "activo": false
+}

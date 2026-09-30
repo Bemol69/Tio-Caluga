@@ -1,0 +1,18 @@
+{
+  "nombre": "Copón Familiar Torta Caluga Frambuesa",
+  "precio": 34990,
+  "porciones": "15 a 20 personas · 4 L",
+  "foto": "/img/productos/copon-frambuesa.jpg",
+  "fotos": [
+    "/img/productos/copon-frambuesa-2.jpg"
+  ],
+  "descripcion": "Formato familiar de 4 litros con capas de caluga artesanal y frambuesas naturales.",
+  "versiones": [
+    "Con azúcar",
+    "Sin azúcar añadida"
+  ],
+  "etiqueta": "",
+  "orden": 80,
+  "agotado": false,
+  "visible": true
+}

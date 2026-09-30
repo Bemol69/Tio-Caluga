@@ -1,0 +1,11 @@
+{
+  "nombre": "Tortas",
+  "productos": [
+    "torta-caluga-manjar-y-frambuesa",
+    "torta-caluga-frambuesa-10-personas",
+    "torta-caluga-frambuesa-5-personas",
+    "torta-caluga-pistacho"
+  ],
+  "orden": 1,
+  "visible": true
+}

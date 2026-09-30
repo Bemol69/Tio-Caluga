@@ -1,0 +1,13 @@
+{
+  "titulo": "Regalo $3.000 en tortas",
+  "codigo": "TORTA3MIL",
+  "tipo": "monto",
+  "valor": 3000,
+  "categorias": [
+    "tortas"
+  ],
+  "productos": [],
+  "minimo": 0,
+  "vence": "",
+  "activo": true
+}

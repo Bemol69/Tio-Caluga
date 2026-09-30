@@ -1,0 +1,14 @@
+{
+  "name": "tio-caluga",
+  "private": true,
+  "description": "Tienda Tío Caluga: sitio estático + panel /admin. El build optimiza las fotos con sharp.",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "sharp": "^0.34.4"
+  }
+}

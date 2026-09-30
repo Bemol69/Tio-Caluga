@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>%%SEO_TITULO%%</title>
+  <meta name="description" content="%%SEO_DESCRIPCION%%">
+  <meta name="theme-color" content="%%COLOR_FRAMBUESA%%">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/img/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <!-- SEO:HEAD (lo completa scripts/build.mjs: canonical, Open Graph y datos estructurados) -->
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="%%FUENTES_URL%%" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Iconos de línea -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M9 13h6M9 17h6"/></symbol>
+      <symbol id="i-cup" viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></symbol>
+      <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9 4.5 4h15L21 9M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+      <symbol id="i-berry" viewBox="0 0 24 24"><path d="M12 7c4 0 7 3 7 7s-3 8-7 8-7-4-7-8 3-7 7-7Z"/><path d="M12 7c-1-2-3-3-5-3 1 2 3 3 5 3Zm0 0c1-2 3-3 5-3-1 2-3 3-5 3Z"/><circle cx="10" cy="12" r=".6"/><circle cx="14" cy="12" r=".6"/><circle cx="12" cy="15" r=".6"/><circle cx="9.5" cy="16.5" r=".6"/><circle cx="14.5" cy="16.5" r=".6"/><circle cx="12" cy="19" r=".6"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#carta">Saltar a la carta</a>
+
+  <header class="top" id="top">
+    <div class="wrap top__in">
+      <a href="#inicio" class="brand" aria-label="%%NOMBRE%%, inicio">
+        <img src="img/logo.jpg" alt="" width="40" height="40">
+        <span>%%MARCA_A%% <em>%%MARCA_B%%</em></span>
+      </a>
+      <nav class="top__nav" id="menu" aria-label="Secciones">
+        <a href="#carta">La carta</a>
+        <!-- SI:FLYER --><a href="#oferta">Oferta</a><!-- /SI:FLYER -->
+        <a href="#pedir">Cómo pedir</a>
+        <a href="#ustedes">Ustedes</a>
+        <!-- SI:PUNTOS --><a href="#puntos">Puntos de venta</a><!-- /SI:PUNTOS -->
+        <a href="#ubicacion">Ubicación</a>
+        <a class="top__nav-wa" id="navWa" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> Pedir por WhatsApp</a>
+      </nav>
+      <div class="top__act">
+        <!-- SI:INSTAGRAM --><a class="round" href="https://www.instagram.com/%%INSTAGRAM%%/" target="_blank" rel="noopener" aria-label="Instagram de %%NOMBRE%%"><svg class="ic"><use href="#i-ig"/></svg></a><!-- /SI:INSTAGRAM -->
+        <button class="order-btn" type="button" data-open-bag aria-label="Abrir mi pedido">
+          <svg class="ic"><use href="#i-bag"/></svg><span class="order-btn__txt">Mi pedido</span>
+          <span class="order-btn__n" id="bagCount" hidden>0</span>
+        </button>
+        <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú"><i></i><i></i><i></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PORTADA: vitrina giratoria de postres (los elige el cliente en /admin → Ajustes) -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero__in">
+        <div class="hero__copy">
+          <p class="kicker kicker--cream"><svg class="ic"><use href="#i-pin"/></svg> %%ZONAS%%</p>
+          <h1 class="title">
+            <span class="title__pre">%%HERO_TITULO%%</span>
+            <span class="title__big" style="--tex: url('%%HERO_TEXTURA%%')">%%HERO_DESTACADO%%</span>
+            <!-- SI:HERO_LEMA --><span class="title__lema">%%HERO_LEMA%%</span><!-- /SI:HERO_LEMA -->
+          </h1>
+          <p class="lead">%%HERO_BAJADA%%</p>
+
+          <div class="sugar" role="radiogroup" aria-label="¿Cómo la prefieres?">
+            <span class="sugar__q">¿Cómo la prefieres?</span>
+            <div class="sugar__sw">
+              <label><input type="radio" name="azucar" value="con" checked><span>Con azúcar</span></label>
+              <label><input type="radio" name="azucar" value="sin"><span>Sin azúcar añadida</span></label>
+              <i class="sugar__knob" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="hero__cta">
+            <a href="#carta" class="btn btn--cream btn--lg">Ver la carta <svg class="ic"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--wa btn--lg" id="heroWa" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> Pedir por WhatsApp</a>
+          </div>
+
+          <dl class="facts">
+            <!-- SI:SEGUIDORES --><div><dt data-count="%%SEGUIDORES_N%%">%%SEGUIDORES%%</dt><dd>seguidores en Instagram</dd></div><!-- /SI:SEGUIDORES -->
+            <!-- SI:PUNTOS_TOTAL --><div><dt data-count="%%PUNTOS_TOTAL%%">%%PUNTOS_TOTAL%%</dt><dd>puntos de venta</dd></div><!-- /SI:PUNTOS_TOTAL -->
+            <div><dt>L a D</dt><dd>entregas toda la semana</dd></div>
+          </dl>
+        </div>
+
+        <div class="vitrina" id="vitrina">
+          <svg class="vitrina__doily" viewBox="-100 -100 200 200" aria-hidden="true"><path d="M90.00 0.00A7.06 7.06 0 0 1 88.89 14.08A7.06 7.06 0 0 1 85.60 27.81A7.06 7.06 0 0 1 80.19 40.86A7.06 7.06 0 0 1 72.81 52.90A7.06 7.06 0 0 1 63.64 63.64A7.06 7.06 0 0 1 52.90 72.81A7.06 7.06 0 0 1 40.86 80.19A7.06 7.06 0 0 1 27.81 85.60A7.06 7.06 0 0 1 14.08 88.89A7.06 7.06 0 0 1 0.00 90.00A7.06 7.06 0 0 1 -14.08 88.89A7.06 7.06 0 0 1 -27.81 85.60A7.06 7.06 0 0 1 -40.86 80.19A7.06 7.06 0 0 1 -52.90 72.81A7.06 7.06 0 0 1 -63.64 63.64A7.06 7.06 0 0 1 -72.81 52.90A7.06 7.06 0 0 1 -80.19 40.86A7.06 7.06 0 0 1 -85.60 27.81A7.06 7.06 0 0 1 -88.89 14.08A7.06 7.06 0 0 1 -90.00 0.00A7.06 7.06 0 0 1 -88.89 -14.08A7.06 7.06 0 0 1 -85.60 -27.81A7.06 7.06 0 0 1 -80.19 -40.86A7.06 7.06 0 0 1 -72.81 -52.90A7.06 7.06 0 0 1 -63.64 -63.64A7.06 7.06 0 0 1 -52.90 -72.81A7.06 7.06 0 0 1 -40.86 -80.19A7.06 7.06 0 0 1 -27.81 -85.60A7.06 7.06 0 0 1 -14.08 -88.89A7.06 7.06 0 0 1 -0.00 -90.00A7.06 7.06 0 0 1 14.08 -88.89A7.06 7.06 0 0 1 27.81 -85.60A7.06 7.06 0 0 1 40.86 -80.19A7.06 7.06 0 0 1 52.90 -72.81A7.06 7.06 0 0 1 63.64 -63.64A7.06 7.06 0 0 1 72.81 -52.90A7.06 7.06 0 0 1 80.19 -40.86A7.06 7.06 0 0 1 85.60 -27.81A7.06 7.06 0 0 1 88.89 -14.08A7.06 7.06 0 0 1 90.00 -0.00Z"/><g class="vitrina__holes"><circle cx="81.75" cy="6.43" r="2.6"/><circle cx="79.73" cy="19.14" r="2.6"/><circle cx="75.76" cy="31.38" r="2.6"/><circle cx="69.92" cy="42.84" r="2.6"/><circle cx="62.35" cy="53.25" r="2.6"/><circle cx="53.25" cy="62.35" r="2.6"/><circle cx="42.84" cy="69.92" r="2.6"/><circle cx="31.38" cy="75.76" r="2.6"/><circle cx="19.14" cy="79.73" r="2.6"/><circle cx="6.43" cy="81.75" r="2.6"/><circle cx="-6.43" cy="81.75" r="2.6"/><circle cx="-19.14" cy="79.73" r="2.6"/><circle cx="-31.38" cy="75.76" r="2.6"/><circle cx="-42.84" cy="69.92" r="2.6"/><circle cx="-53.25" cy="62.35" r="2.6"/><circle cx="-62.35" cy="53.25" r="2.6"/><circle cx="-69.92" cy="42.84" r="2.6"/><circle cx="-75.76" cy="31.38" r="2.6"/><circle cx="-79.73" cy="19.14" r="2.6"/><circle cx="-81.75" cy="6.43" r="2.6"/><circle cx="-81.75" cy="-6.43" r="2.6"/><circle cx="-79.73" cy="-19.14" r="2.6"/><circle cx="-75.76" cy="-31.38" r="2.6"/><circle cx="-69.92" cy="-42.84" r="2.6"/><circle cx="-62.35" cy="-53.25" r="2.6"/><circle cx="-53.25" cy="-62.35" r="2.6"/><circle cx="-42.84" cy="-69.92" r="2.6"/><circle cx="-31.38" cy="-75.76" r="2.6"/><circle cx="-19.14" cy="-79.73" r="2.6"/><circle cx="-6.43" cy="-81.75" r="2.6"/><circle cx="6.43" cy="-81.75" r="2.6"/><circle cx="19.14" cy="-79.73" r="2.6"/><circle cx="31.38" cy="-75.76" r="2.6"/><circle cx="42.84" cy="-69.92" r="2.6"/><circle cx="53.25" cy="-62.35" r="2.6"/><circle cx="62.35" cy="-53.25" r="2.6"/><circle cx="69.92" cy="-42.84" r="2.6"/><circle cx="75.76" cy="-31.38" r="2.6"/><circle cx="79.73" cy="-19.14" r="2.6"/><circle cx="81.75" cy="-6.43" r="2.6"/><circle cx="74.00" cy="0.00" r="1.3"/><circle cx="73.09" cy="11.58" r="1.3"/><circle cx="70.38" cy="22.87" r="1.3"/><circle cx="65.93" cy="33.60" r="1.3"/><circle cx="59.87" cy="43.50" r="1.3"/><circle cx="52.33" cy="52.33" r="1.3"/><circle cx="43.50" cy="59.87" r="1.3"/><circle cx="33.60" cy="65.93" r="1.3"/><circle cx="22.87" cy="70.38" r="1.3"/><circle cx="11.58" cy="73.09" r="1.3"/><circle cx="0.00" cy="74.00" r="1.3"/><circle cx="-11.58" cy="73.09" r="1.3"/><circle cx="-22.87" cy="70.38" r="1.3"/><circle cx="-33.60" cy="65.93" r="1.3"/><circle cx="-43.50" cy="59.87" r="1.3"/><circle cx="-52.33" cy="52.33" r="1.3"/><circle cx="-59.87" cy="43.50" r="1.3"/><circle cx="-65.93" cy="33.60" r="1.3"/><circle cx="-70.38" cy="22.87" r="1.3"/><circle cx="-73.09" cy="11.58" r="1.3"/><circle cx="-74.00" cy="0.00" r="1.3"/><circle cx="-73.09" cy="-11.58" r="1.3"/><circle cx="-70.38" cy="-22.87" r="1.3"/><circle cx="-65.93" cy="-33.60" r="1.3"/><circle cx="-59.87" cy="-43.50" r="1.3"/><circle cx="-52.33" cy="-52.33" r="1.3"/><circle cx="-43.50" cy="-59.87" r="1.3"/><circle cx="-33.60" cy="-65.93" r="1.3"/><circle cx="-22.87" cy="-70.38" r="1.3"/><circle cx="-11.58" cy="-73.09" r="1.3"/><circle cx="-0.00" cy="-74.00" r="1.3"/><circle cx="11.58" cy="-73.09" r="1.3"/><circle cx="22.87" cy="-70.38" r="1.3"/><circle cx="33.60" cy="-65.93" r="1.3"/><circle cx="43.50" cy="-59.87" r="1.3"/><circle cx="52.33" cy="-52.33" r="1.3"/><circle cx="59.87" cy="-43.50" r="1.3"/><circle cx="65.93" cy="-33.60" r="1.3"/><circle cx="70.38" cy="-22.87" r="1.3"/><circle cx="73.09" cy="-11.58" r="1.3"/></g></svg>
+          <div class="vitrina__plate">
+            <img id="vitrinaImg" src="%%VITRINA_FOTO%%" alt="%%VITRINA_NOMBRE%%" fetchpriority="high" width="900" height="900">
+          </div>
+          <div class="vitrina__orbit" role="group" aria-label="Postres en vitrina"><!-- VITRINA:LISTA --></div>
+          <p class="vitrina__tag" aria-live="polite">
+            <small>En vitrina</small>
+            <strong id="vitrinaNombre">%%VITRINA_NOMBRE%%</strong>
+            <span id="vitrinaPrecio">%%VITRINA_PRECIO%%</span>
+            <button type="button" class="vitrina__ver" id="vitrinaVer" data-view="%%VITRINA_ID%%" aria-label="Ver %%VITRINA_NOMBRE%%"><svg class="ic"><use href="#i-arrow"/></svg></button>
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="drip drip--hero" aria-hidden="true"><svg viewBox="0 0 1200 90" preserveAspectRatio="none"><path d="M0 0H1200V18L1186.0 18Q1180.0 18 1180.0 24L1180.0 34.4A16.3 16.3 0 0 1 1147.4 34.4L1147.4 24Q1147.4 18 1141.4 18L1122.9 18Q1116.9 18 1116.9 24L1116.9 48.9A14.6 14.6 0 0 1 1087.8 48.9L1087.8 24Q1087.8 18 1081.8 18L1057.3 18Q1051.3 18 1051.3 24L1051.3 60.4A14.8 14.8 0 0 1 1021.8 60.4L1021.8 24Q1021.8 18 1015.8 18L980.6 18Q974.6 18 974.6 24L974.6 54.7A14.2 14.2 0 0 1 946.3 54.7L946.3 24Q946.3 18 940.3 18L891.5 18Q885.5 18 885.5 24L885.5 45.0A10.2 10.2 0 0 1 865.1 45.0L865.1 24Q865.1 18 859.1 18L815.7 18Q809.7 18 809.7 24L809.7 24.0A14.3 14.3 0 0 1 781.1 24.0L781.1 24Q781.1 18 775.1 18L733.0 18Q727.0 18 727.0 24L727.0 71.7A12.2 12.2 0 0 1 702.5 71.7L702.5 24Q702.5 18 696.5 18L648.2 18Q642.2 18 642.2 24L642.2 53.3A9.1 9.1 0 0 1 623.9 53.3L623.9 24Q623.9 18 617.9 18L563.8 18Q557.8 18 557.8 24L557.8 55.1A14.2 14.2 0 0 1 529.4 55.1L529.4 24Q529.4 18 523.4 18L486.5 18Q480.5 18 480.5 24L480.5 67.0A16.2 16.2 0 0 1 448.1 67.0L448.1 24Q448.1 18 442.1 18L415.5 18Q409.5 18 409.5 24L409.5 68.4A11.0 11.0 0 0 1 387.5 68.4L387.5 24Q387.5 18 381.5 18L356.8 18Q350.8 18 350.8 24L350.8 41.8A9.4 9.4 0 0 1 332.1 41.8L332.1 24Q332.1 18 326.1 18L296.7 18Q290.7 18 290.7 24L290.7 74.1A10.7 10.7 0 0 1 269.4 74.1L269.4 24Q269.4 18 263.4 18L227.5 18Q221.5 18 221.5 24L221.5 67.0A14.6 14.6 0 0 1 192.4 67.0L192.4 24Q192.4 18 186.4 18L175.4 18Q169.4 18 169.4 24L169.4 54.5A10.5 10.5 0 0 1 148.5 54.5L148.5 24Q148.5 18 142.5 18L109.1 18Q103.1 18 103.1 24L103.1 33.8A11.8 11.8 0 0 1 79.5 33.8L79.5 24Q79.5 18 73.5 18L0 18Z"/></svg></div>
+
+    <!-- SI:FRANJA1 -->
+    <!-- CINTA (frases editables en /admin → Oferta, cinta y fotos) -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon__track" style="--dur: %%FRANJA1_SEG%%s"><!-- FRANJA1 --></div>
+    </div>
+    <!-- /SI:FRANJA1 -->
+
+    <!-- LA CARTA -->
+    <section id="carta" class="sec carta">
+      <div class="wrap">
+        <header class="head">
+          <p class="kicker">Tortas, copones y brownies</p>
+          <h2>La <em>carta</em></h2>
+          <p class="muted">Elige tu favorito, dinos si lo quieres con o sin azúcar añadida y para qué día. Tu pedido llega armado a nuestro WhatsApp.</p>
+        </header>
+        <div class="bar">
+          <div class="tabs" id="filters" role="tablist" aria-label="Categorías"></div>
+          <label class="sort">
+            <span>Ordenar</span>
+            <select id="sort">
+              <option value="destacados">Destacados</option>
+              <option value="precio-asc">Menor precio</option>
+              <option value="precio-desc">Mayor precio</option>
+            </select>
+          </label>
+        </div>
+        <p class="count" id="count"></p>
+        <div class="grid" id="productGrid"><!-- SEO:PRODUCTOS --></div>
+        <div class="carta__more">
+          <p>¿Una torta para un cumpleaños, evento o empresa?</p>
+          <button class="btn btn--line" type="button" data-encargo><svg class="ic"><use href="#i-gift"/></svg> Cotiza tu pedido especial</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SI:FLYER -->
+    <!-- OFERTA VIGENTE (editable en /admin → Oferta, cinta y fotos) -->
+    <section id="oferta" class="sec oferta">
+      <div class="wrap oferta__in">
+        <a class="ticket" href="%%FLYER_WA%%" target="_blank" rel="noopener" data-reveal>
+          <img src="%%FLYER%%" alt="%%FLYER_ALT%%" loading="lazy" width="1080" height="1440">
+        </a>
+        <div class="oferta__txt" data-reveal>
+          <p class="kicker kicker--berry">Oferta vigente · cupos limitados</p>
+          <h2>%%FLYER_TITULO%%</h2>
+          <!-- SI:FLYER_TEXTO --><p class="lead">%%FLYER_TEXTO%%</p><!-- /SI:FLYER_TEXTO -->
+          <div class="hero__cta">
+            <a class="btn btn--wa btn--lg" href="%%FLYER_WA%%" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> Reservar esta oferta</a>
+            <a class="btn btn--line btn--lg" href="#carta">Ver la carta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /SI:FLYER -->
+
+    <!-- CÓMO PEDIR -->
+    <section id="pedir" class="sec pedir">
+      <div class="wrap">
+        <header class="head">
+          <p class="kicker">Tres pasos, cero enredo</p>
+          <h2>Cómo <em>pedir</em></h2>
+        </header>
+        <ol class="recipe">
+          <li data-reveal style="--i:0"><span class="recipe__n">1</span><h3>Elige tu postre</h3><p>Arma tu pedido en la carta y dinos si lo quieres con o sin azúcar añadida.</p></li>
+          <li data-reveal style="--i:1"><span class="recipe__n">2</span><h3>Agenda el día</h3><p>Elige la fecha y el horario. En fechas especiales los cupos vuelan: reserva con anticipación.</p></li>
+          <li data-reveal style="--i:2"><span class="recipe__n">3</span><h3>Recíbelo</h3><p>Entregas a domicilio de lunes a domingo, o lo retiras donde coordinemos. Te confirmamos el cupo por WhatsApp.</p></li>
+        </ol>
+        <div class="deliver">
+          <div class="deliver__map" data-reveal>
+            <p class="kicker">Llegamos a</p>
+            <ul class="zones"><!-- ZONAS:LISTA --></ul>
+            <!-- SI:ENVIO_GRATIS --><p class="free"><svg class="ic"><use href="#i-truck"/></svg> %%ENVIO_GRATIS%%</p><!-- /SI:ENVIO_GRATIS -->
+          </div>
+          <ul class="facts-list" data-reveal>
+            <li><svg class="ic"><use href="#i-cal"/></svg><div><strong>%%DIAS%%</strong><span>Entregamos toda la semana</span></div></li>
+            <li><svg class="ic"><use href="#i-gift"/></svg><div><strong>Listo para regalar</strong><span>Agrega un mensaje para la tarjeta en tu pedido</span></div></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><div><strong>Medios de pago</strong><span>%%PAGOS%%</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- USTEDES: fotos de clientes (editables en /admin) -->
+    <section id="ustedes" class="sec ustedes">
+      <div class="wrap">
+        <header class="head">
+          <p class="kicker">Ustedes 👨🏻‍🍳</p>
+          <h2>El sur, con una <em>cuchara</em> en la mano</h2>
+          <p class="muted">Piscina, lago, jardín o sobremesa: así se disfruta Tío Caluga. Mira más momentos de clientes en nuestras historias destacadas.</p>
+        </header>
+        <div class="moments">
+          <!-- ENTREGAS:LISTA (las escribe scripts/build.mjs desde data/entregas.json) -->
+        </div>
+        <!-- SI:INSTAGRAM --><p class="center"><a class="btn btn--line" href="https://www.instagram.com/%%INSTAGRAM%%/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ig"/></svg> Ver más en @%%INSTAGRAM%%</a></p><!-- /SI:INSTAGRAM -->
+      </div>
+    </section>
+
+    <!-- SI:PUNTOS -->
+    <!-- PUNTOS DE VENTA (editables en /admin → Ajustes) -->
+    <section id="puntos" class="sec puntos">
+      <div class="wrap puntos__in">
+        <div class="puntos__big" data-reveal>
+          <!-- SI:PUNTOS_TOTAL --><strong data-count="%%PUNTOS_TOTAL%%">%%PUNTOS_TOTAL%%</strong><!-- /SI:PUNTOS_TOTAL -->
+          <p>puntos de venta entre Temuco y Villarrica, y seguimos sumando.</p>
+        </div>
+        <div data-reveal>
+          <p class="kicker">También nos encuentras en</p>
+          <ul class="spots"><!-- PUNTOS:LISTA --></ul>
+        </div>
+      </div>
+    </section>
+    <!-- /SI:PUNTOS -->
+
+    <!-- CAFETERÍAS Y NEGOCIOS -->
+    <section class="sec b2b">
+      <div class="wrap b2b__in" data-reveal>
+        <svg class="ic b2b__ic"><use href="#i-cup"/></svg>
+        <div>
+          <h2>¿Tienes cafetería o negocio?</h2>
+          <p>Lleva Tío Caluga a tu vitrina: postres con estética, sabor y el nivel que tus clientes notan.</p>
+        </div>
+        <a class="btn btn--cream btn--lg" id="b2bWa" target="_blank" rel="noopener">Quiero vender Tío Caluga</a>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN (dirección editable en /admin → Ajustes) -->
+    <section id="ubicacion" class="sec ubica">
+      <div class="wrap ubica__in">
+        <div class="ubica__card" data-reveal>
+          <p class="kicker">Ubicación</p>
+          <h2>Nos encuentras en <em>%%CIUDAD%%</em></h2>
+          <address class="ubica__dir">
+            <svg class="ic"><use href="#i-pin"/></svg>
+            <span><strong>%%DIRECCION%%</strong>%%CIUDAD%%, %%REGION%%</span>
+          </address>
+          <ul class="ubica__list">
+            <li><svg class="ic"><use href="#i-cal"/></svg> Entregas de %%DIAS_MIN%%</li>
+            <!-- SI:ENVIO_GRATIS --><li><svg class="ic"><use href="#i-truck"/></svg> %%ENVIO_GRATIS%%</li><!-- /SI:ENVIO_GRATIS -->
+            <li><svg class="ic"><use href="#i-home"/></svg> Despacho a %%ZONAS%%</li>
+          </ul>
+          <div class="ubica__cta">
+            <a class="btn btn--berry" href="https://www.google.com/maps/dir/?api=1&amp;destination=%%MAPA_QUERY%%" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg> Cómo llegar</a>
+            <a class="btn btn--line" href="https://waze.com/ul?q=%%MAPA_QUERY%%&amp;navigate=yes" target="_blank" rel="noopener">Abrir en Waze</a>
+            <a class="btn btn--wa" id="contactWaBtn" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> WhatsApp</a>
+          </div>
+        </div>
+        <figure class="ubica__map" data-reveal style="--i:1">
+          <iframe src="https://www.google.com/maps?q=%%MAPA_QUERY%%&amp;z=16&amp;output=embed" title="Mapa: %%DIRECCION%%, %%CIUDAD%%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <span class="lid ubica__lid" aria-hidden="true"><small>aquí</small><b>estamos</b></span>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <a href="#inicio" class="brand brand--foot"><img src="img/logo.jpg" alt="" width="40" height="40" loading="lazy"><span>%%MARCA_A%% <em>%%MARCA_B%%</em></span></a>
+      <p>%%RUBRO%%<br>%%DIRECCION%%, %%CIUDAD%% · Despacho a %%ZONAS%%</p>
+      <p class="foot__links">
+        <a id="footerWa" target="_blank" rel="noopener">WhatsApp</a>
+        <!-- SI:INSTAGRAM --><a href="https://www.instagram.com/%%INSTAGRAM%%/" target="_blank" rel="noopener">@%%INSTAGRAM%%</a><!-- /SI:INSTAGRAM -->
+      </p>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="floatWa" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.7 10.7 0 1 1 16 26.7Zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7a.6.6 0 0 0 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.7 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c0-.2-.3-.3-.6-.4Z"/></svg></a>
+
+  <!-- FICHA DE PRODUCTO -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal__bg" data-close></div>
+    <div class="modal__panel pm" role="dialog" aria-modal="true" aria-labelledby="pmName">
+      <button class="x" type="button" data-close aria-label="Cerrar">×</button>
+      <div class="pm__media">
+        <div class="pm__frame">
+          <img id="pmImg" src="img/logo.jpg" alt="">
+          <button class="pm__nav pm__nav--prev" type="button" data-step-photo="-1" aria-label="Foto anterior">‹</button>
+          <button class="pm__nav pm__nav--next" type="button" data-step-photo="1" aria-label="Foto siguiente">›</button>
+        </div>
+        <div class="pm__thumbs" id="pmThumbs"></div>
+      </div>
+      <div class="pm__info">
+        <p class="kicker" id="pmCat"></p>
+        <h2 id="pmName"></h2>
+        <p class="pm__serves" id="pmServes"></p>
+        <p class="pm__price" id="pmPrice"></p>
+        <p class="pm__desc" id="pmDesc"></p>
+        <div id="pmSizesWrap">
+          <p class="label">Versión <span id="pmSizeHint"></span></p>
+          <div class="chips" id="pmSizes" role="radiogroup" aria-label="Elige la versión"></div>
+        </div>
+        <div class="pm__qty">
+          <p class="label">Cantidad</p>
+          <div class="qty qty--lg">
+            <button type="button" data-qty="-1" aria-label="Menos">−</button>
+            <span id="pmQty">1</span>
+            <button type="button" data-qty="1" aria-label="Más">+</button>
+          </div>
+        </div>
+        <p class="error" id="pmError" hidden></p>
+        <button class="btn btn--berry btn--block btn--lg" type="button" id="pmAdd"><svg class="ic"><use href="#i-bag"/></svg> Agregar al pedido</button>
+        <a class="btn btn--line btn--block" id="pmAsk" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> Preguntar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PEDIDO (bolsa + datos de entrega) -->
+  <aside class="bag" id="bag" aria-hidden="true">
+    <div class="bag__bg" data-close-bag></div>
+    <div class="bag__panel" role="dialog" aria-modal="true" aria-labelledby="bagTitle">
+      <header class="bag__head">
+        <h2 id="bagTitle">Tu pedido</h2>
+        <button class="x" type="button" data-close-bag aria-label="Cerrar">×</button>
+      </header>
+      <div class="bag__body">
+        <div class="bag__empty" id="bagEmpty">
+          <img src="img/logo.jpg" alt="" width="72" height="72">
+          <p>Tu pedido está vacío. Agrega algo de la carta o cuéntanos qué necesitas aquí abajo.</p>
+          <a class="btn btn--line btn--sm" href="#carta" data-close-bag>Ver la carta</a>
+        </div>
+        <ul class="bag__list" id="bagList"></ul>
+
+        <div class="coupon" id="couponBox" hidden>
+          <div id="cuponForm">
+            <label class="label" for="fCupon">¿Tienes un código de descuento?</label>
+            <div class="coupon__row">
+              <input id="fCupon" type="text" placeholder="Ej: CALUGA10" autocomplete="off" autocapitalize="characters" spellcheck="false">
+              <button class="btn btn--line btn--sm" type="button" id="cuponBtn">Aplicar</button>
+            </div>
+          </div>
+          <div class="coupon__status" id="cuponStatus" role="status" aria-live="polite" hidden></div>
+        </div>
+
+        <form id="orderForm" class="checkout" novalidate>
+          <details class="encargo" id="encargoBox">
+            <summary>¿Pedido especial o para un evento? <strong>Cuéntanos</strong></summary>
+            <textarea id="fEncargo" rows="2" placeholder="Ej: torta para 25 personas, sin azúcar añadida, para el sábado"></textarea>
+          </details>
+
+          <p class="step"><span>1</span> Tus datos</p>
+          <label>Nombre y apellido
+            <input id="fNombre" type="text" autocomplete="name" placeholder="Ej: Camila Soto">
+          </label>
+
+          <p class="step"><span>2</span> Entrega</p>
+          <div class="seg" id="fEntrega" role="radiogroup" aria-label="Dónde entregamos"></div>
+          <div class="row">
+            <label>¿Para qué día?
+              <input id="fFecha" type="date">
+            </label>
+            <label>Horario
+              <select id="fHora">
+                <option value="">Me acomoda cualquiera</option>
+                <option>Mañana (9 a 13 h)</option>
+                <option>Tarde (13 a 18 h)</option>
+                <option>Noche (18 a 21 h)</option>
+              </select>
+            </label>
+          </div>
+          <label data-domicilio>Dirección de entrega
+            <input id="fDireccion" type="text" autocomplete="street-address" placeholder="Calle, número, depto o sector">
+          </label>
+          <label>¿Es un regalo? Mensaje para la tarjeta <small>(opcional)</small>
+            <input id="fRegalo" type="text" maxlength="140" placeholder="Ej: ¡Feliz cumple, mamá! Te quiero mucho">
+          </label>
+
+          <p class="step"><span>3</span> Pago</p>
+          <div class="seg" id="fPago" role="radiogroup" aria-label="Medio de pago"></div>
+
+          <label>Comentario <small>(opcional)</small>
+            <input id="fNota" type="text" placeholder="Ej: tocar el timbre del depto 402">
+          </label>
+
+          <div class="preview">
+            <p class="preview__label">Así llegará tu mensaje</p>
+            <div id="msgPreview"></div>
+          </div>
+        </form>
+      </div>
+      <footer class="bag__foot">
+        <div class="bag__sums" id="bagSums" hidden></div>
+        <div class="bag__total"><span id="bagTotalLabel">Total</span><strong id="bagTotal">$0</strong></div>
+        <p class="bag__hint" id="bagHint"></p>
+        <p class="error" id="formError" hidden></p>
+        <button class="btn btn--wa btn--block btn--lg" type="submit" form="orderForm"><svg class="ic"><use href="#i-chat"/></svg> Enviar pedido por WhatsApp</button>
+        <p class="bag__legal">Confirmamos disponibilidad y cupo del día por WhatsApp antes del pago.</p>
+      </footer>
+    </div>
+  </aside>
+
+  <button class="fab" type="button" data-open-bag hidden><svg class="ic"><use href="#i-bag"/></svg><span id="fabLabel">Mi pedido</span></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- SI:FLYER_POPUP -->
+  <!-- VENTANA EMERGENTE DE LA OFERTA (una vez por visita) -->
+  <div class="modal promo-modal" id="promoModal" aria-hidden="true" data-flyer="%%FLYER_POPUP%%">
+    <div class="modal__bg" data-promo-close></div>
+    <div class="modal__panel promo-modal__panel" role="dialog" aria-modal="true" aria-label="%%FLYER_TITULO%%">
+      <button class="x" data-promo-close aria-label="Cerrar">×</button>
+      <a href="%%FLYER_WA%%" target="_blank" rel="noopener"><img src="%%FLYER_POPUP%%" alt="%%FLYER_ALT%%" width="1080" height="1440"></a>
+      <div class="promo-modal__act">
+        <a class="btn btn--wa btn--block" href="%%FLYER_WA%%" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> Reservar esta oferta</a>
+        <button class="btn btn--line btn--block" data-promo-close>Ver la carta</button>
+      </div>
+    </div>
+  </div>
+  <!-- /SI:FLYER_POPUP -->
+
+  <script src="app.js" charset="utf-8"></script>
+</body>
+</html>

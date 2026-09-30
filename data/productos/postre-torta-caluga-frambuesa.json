@@ -1,0 +1,20 @@
+{
+  "nombre": "Postre Torta Caluga Frambuesa",
+  "precio": 4990,
+  "precio_antes": 7990,
+  "porciones": "Individual",
+  "foto": "/img/productos/postre-frambuesa.jpg",
+  "fotos": [
+    "/img/productos/postre-frambuesa-2.jpg",
+    "/img/productos/postre-frambuesa-3.jpg"
+  ],
+  "descripcion": "La Torta Caluga Frambuesa en frasco individual, cremosa y lista para cucharear.",
+  "versiones": [
+    "Con azúcar",
+    "Sin azúcar añadida"
+  ],
+  "etiqueta": "",
+  "orden": 90,
+  "agotado": false,
+  "visible": true
+}

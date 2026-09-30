@@ -1,0 +1,41 @@
+{
+  "whatsapp": "56939221936",
+  "instagram": "tiocaluga",
+  "email": "",
+  "ciudad": "Temuco",
+  "direccion": "La Llanura 2231",
+  "region": "Región de La Araucanía",
+  "zonas_entrega": [
+    "Temuco",
+    "Villarrica",
+    "Pucón"
+  ],
+  "envio_gratis": "Envío gratis en Temuco",
+  "medios_pago": [
+    "Transferencia",
+    "Efectivo",
+    "Débito o crédito"
+  ],
+  "dias_entrega": "Lunes a domingo",
+  "puntos_venta_total": 23,
+  "seguidores": 7786,
+  "puntos_venta": [
+    "Masapan Portal Francés · Temuco",
+    "Masapan · Temuco",
+    "Punto Handroll · Fundo El Carmen",
+    "Mirin Sushi · Av. Pablo Neruda",
+    "Mirin Sushi · San Martín",
+    "Mirin Sushi · Sector Norte"
+  ],
+  "hero_titulo": "La Torta",
+  "hero_destacado": "Caluga",
+  "hero_lema": "hecha en el sur, con obsesión",
+  "hero_bajada": "Capas de caluga artesanal, frambuesas naturales y crumble, con o sin azúcar añadida. Haz un regalo, cumple un antojo o auto regálate: te la llevamos de lunes a domingo.",
+  "vitrina": [
+    "torta-caluga-frambuesa-10-personas",
+    "copon-familiar-torta-caluga-franui",
+    "brownie-pistacho-franui",
+    "torta-caluga-pistacho",
+    "postre-torta-caluga-frambuesa"
+  ]
+}

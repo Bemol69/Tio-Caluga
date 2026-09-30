@@ -1,0 +1,19 @@
+{
+  "nombre": "Torta Caluga Frambuesa 10 personas",
+  "precio": 24490,
+  "precio_antes": 34990,
+  "porciones": "10 personas",
+  "foto": "/img/productos/torta-frambuesa-10.jpg",
+  "fotos": [
+    "/img/productos/torta-frambuesa-10-2.jpg"
+  ],
+  "descripcion": "Nuestra clásica: capas suaves de caluga artesanal, frambuesas naturales y crumble.",
+  "versiones": [
+    "Con azúcar",
+    "Sin azúcar añadida"
+  ],
+  "etiqueta": "",
+  "orden": 30,
+  "agotado": false,
+  "visible": true
+}
